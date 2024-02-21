@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="task2.css">
+        <style>
+                .error {
+                        color: red;
+                        font-size: 12px;
+                }
+        </style>
+</head>
+
+<body style="background-color: #FAF9F6; text-align: center; ">
+        <form id="signupForm" onsubmit="return validateForm()">
+                <div class="container">
+                        <div class="image-container">
+                                <img class="image" src="8233819_call_center_support_customer_service_icon.png"
+                                        alt="Image 1">
+                        </div>
+                        <h1>SIGNUP FORM </h1>
+                        <div style="margin-bottom: 10px;"> FirstName <input type="text" name="name" id="fn"
+                                        placeholder="Enter FirstName"></div>
+                        <div class="error" id="fnError"></div>
+
+                        <div style="margin-bottom: 10px;">Last Name <input type="text" name="name" id="ln"
+                                        placeholder="Enter LastName"></div>
+                        <div class="error" id="lnError"></div>
+
+                        <div style="margin-bottom: 10px;">Email id <input type="email" name="mail" id="emaill"
+                                        placeholder="Enter Email id*"></div>
+                        <div class="error" id="emailError"></div>
+
+                        <div class="check">
+                                <div style="margin-bottom: 10px;">User Name <input type="text" name="user" id="uName"
+                                                placeholder="Enter UserName*"></div>
+                                <div class="error" id="uNameError"></div>
+
+                                <div style="margin-bottom: 10px;">PhoneNum <input type="tel" name="num" id="no"
+                                                placeholder="Enter PhoneNumber*"></div>
+                                <div class="error" id="phoneError"></div>
+
+                                <div style="margin-bottom: 10px;">Passwordd <input type="password" name="pas" id="pass"
+                                                placeholder="Create Password*"></div>
+                                <div class="error" id="passError"></div>
+
+                                <div style="margin-bottom: 10px;">Confirmedd <input type="password" name="pas"
+                                                id="Cpass" placeholder="Confirm Password*"></div>
+                                <div class="error" id="CpassError"></div>
+                        </div>
+
+                        <div
+                                style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-left: 120px; color: black;">
+                                <input type="checkbox" id="remember"> Remember Me
+                        </div>
+
+                        <div>
+                                <button style="color: azure; background-color: red; border: none; padding-left: 62px; padding-right: 62px; border-radius: 5PX; margin-top: 5px;  "
+                                        type="submit">Register</button>
+                        </div>
+                        <div class="icons">
+                                <a href="#"><img src="call-removebg-preview.png" alt=""></a>
+                                <a href="#"><img src="mail-removebg-preview.png" alt=""></a>
+                                <a href="#"><img src="insta-removebg-preview.png" alt=""></a>
+                                <a href="#"><img src="facebook-removebg-preview.png" alt=""></a>
+                        </div>
+                </div>
+        </form>
+
+        <script>
+                function validateForm() {
+                        //reset for any previous garbage value as error---->
+
+                        document.getElementById('fnError').textContent = '';
+                        document.getElementById('lnError').textContent = '';
+                        document.getElementById('emailError').textContent = '';
+                        document.getElementById('uNameError').textContent = '';
+                        document.getElementById('phoneError').textContent = '';
+                        document.getElementById('passError').textContent = '';
+                        document.getElementById('CpassError').textContent = '';
+
+
+                        var firstName = document.getElementById('fn').value;
+                        if (firstName.length < 1) {
+                                document.getElementById('fnError').textContent = 'Please enter your first name';
+                                return false;
+                        }
+
+                        var lastName = document.getElementById('ln').value;
+                        if (lastName.length < 1) {
+                                document.getElementById('lnError').textContent = 'Please enter your last name';
+                                return false;
+                        }
+
+                        var email = document.getElementById('emaill').value;
+                        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!emailRegex.test(email)) {
+                                document.getElementById('emailError').textContent = 'Please enter a valid email address';
+                                return false;
+                        }
+
+                        var userName = document.getElementById('uName').value;
+                        if (userName.length < 1) {
+                                document.getElementById('uNameError').textContent = 'Please enter a username';
+                                return false;
+                        }
+
+                        var phoneNumber = document.getElementById('no').value;
+                        var phoneRegex = /^[0-9]{10}$/;
+                        if (!phoneRegex.test(phoneNumber)) {
+                                document.getElementById('phoneError').textContent = 'Please enter a valid phone number';
+                                return false;
+                        }
+
+                        var password = document.getElementById('pass').value;
+                        if (password.length < 6) {
+                                document.getElementById('passError').textContent = 'Password must be at least 6 characters';
+                                return false;
+                        }
+
+                        var confirmPassword = document.getElementById('Cpass').value;
+                        if (confirmPassword !== password) {
+                                document.getElementById('CpassError').textContent = 'Passwords do not match';
+                                return false;
+                        }
+
+
+                        return true;
+                }
+        </script>
+</body>
+
+</html>
