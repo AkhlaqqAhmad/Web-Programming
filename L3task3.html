@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <div class="all" style="background-color: aquamarine; text-align: center;">
+    <h1>CALCULATOR </h1>
+    <form name="myform">
+        Value 1: <input type="text" id="num1" placeholder="Enter num1" required><br><br>
+        Value 2: <input type="text" id="num2" placeholder="Enter num2" required><br><br>
+        <input type="checkbox" name="check" value="add"> Addition<br>
+        <input type="checkbox" name="check" value="sub"> Subtraction<br>
+        <input type="checkbox" name="check" value="mul"> Multiplication<br>
+        <input type="checkbox" name="check" value="div"> Division<br><br>
+        <input type="button" value="Submit" onclick="calculate()">
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function calculate() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const checkboxes = document.getElementsByName('check');
+
+            let result = 0;
+            checkboxes.forEach((checkbox) => {
+                if (checkbox.checked) {
+                    switch (checkbox.value) {
+                        case 'add':
+                            result = num1 + num2;
+                            break;
+                        case 'sub':
+                            result = num1 - num2;
+                            break;
+                        case 'mul':
+                            result = num1 * num2;
+                            break;
+                        case 'div':
+                            result = num1 / num2;
+                            break;
+                    }
+                }
+            });
+
+            document.getElementById('result').textContent = `Result: ${result}`;
+        }
+    </script>
+    </div>
+</body>
+</html>

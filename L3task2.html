@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Buttons Example</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-3">
+        <h2>Button Styles</h2>
+        <button type="button" class="btn">Basic</button>
+        <button type="button" class="btn btn-outline-dark" id="btn1">Default</button>
+        <button type="button" class="btn btn-primary" id="btn2">Primary</button>
+        <button type="button" class="btn btn-success" id="btn3">Success</button>
+        <button type="button" class="btn btn-info" id="btn4">Info</button>
+        <button type="button" class="btn btn-warning" id="btn5">Warning</button>
+        <button type="button" class="btn btn-danger" id="btn6">Danger</button>
+
+        <button type="button" class="btn btn-link" id="btn7">Link</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const message = `You have succesfully logged in clicking on "${button.textContent}" button.`;
+        alert(message);
+      });
+    });
+    </script> 
+</body>
+</html>
