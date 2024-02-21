@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Webpage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .img-wrapper {
+            position: relative;
+        }
+        .img-responsive {
+            width: 100%;
+            height: auto;
+        }
+        .img-overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+        .img-overlay:before {
+            content: ' ';
+            display: block;
+            height: 50%;
+        }
+        .btn-long {
+            width: 1000px;
+        }
+        .alert-success {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+        }
+        .center-button {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        #top{
+            text-align: center;
+            border: 2px solid rgb(192, 186, 186);
+            background-color: #c4cac6;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            padding: 30px 10px 30px 10px;
+        }
+        #last{
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row" id="top">
+            <div class="col-md-12">
+                <h1>Welcome to our website!</h1>
+                <h2>Look at this button! Wow, let's click on it.</h2>
+                <div class="center-button">
+                    <button class="btn btn-lg btn-primary btn-long">Learn more</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="img-wrapper">
+                    <img src="8159104_user_profile_rating_icon.png" alt="Image 1" class="img-responsive">
+                    
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid vitae cumque, voluptates nobis iure hic nisi ea perspiciatis expedita deleniti omnis consectetur voluptas, optio dolore architecto impedit doloribus quae earum.
+                Dignissimos mollitia aperiam doloribus ipsum eos similique facilis temporibus a soluta, iste ut asperiores dicta praesentium architecto quae quas assumenda sapiente. Pariatur soluta, optio esse temporibus rem inventore sed officia!</p>
+            </div>
+            <div class="col-md-4">
+                <div class="img-wrapper">
+                    <img src="10516350_purchase_service_e-commerce_promotion_online shopping_icon.png" alt="Image 2" class="img-responsive">
+                    
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident omnis distinctio, et labore nostrum quod enim nesciunt quasi ex hic, sit iusto dolor sunt molestiae rem minus dolorem cum a?
+                Iure aut amet itaque officia, repellendus voluptatem accusantium atque dignissimos corporis aliquid, aperiam delectus quae. Perferendis tempora repellendus laudantium veniam autem ipsam numquam voluptatum sunt nulla tenetur placeat, est temporibus!</p>
+            </div>
+            <div class="col-md-4">
+                <div class="img-wrapper">
+                    <img src="8233819_call_center_support_customer_service_icon.png" alt="Image 3" class="img-responsive">
+                    
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus optio neque aut minima eaque eum magnam explicabo enim obcaecati! Suscipit eius, nemo pariatur amet nesciunt perspiciatis obcaecati minus fugiat qui.
+                Excepturi eveniet neque ab repellendus voluptatum veniam distinctio iusto impedit placeat, eaque, et laudantium hic error architecto labore odio voluptatibus aspernatur aliquam officiis minima nostrum voluptatem! Modi quidem quos qui?
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" id="last">
+                <div class="alert alert-success" role="alert">
+                    Thanks for Visiting!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
