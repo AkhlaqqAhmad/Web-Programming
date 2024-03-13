@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Digital Clock</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <style>
+        body {
+            background-color: #e6a312;
+        }
+
+        .clock {
+            position: absolute;
+            top: 30%;
+            left: 40%;
+            color: #2308f1;
+            font-size: 60px;
+            font-family: Orbitron;
+            letter-spacing: 7px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="MyClockDisplay" class="clock" onclick="showTime()"> CLICK MEE !</div>
+    <script>
+        function showTime() {
+            var date = new Date();
+            var h = date.getHours(); // 0 - 23
+            var m = date.getMinutes(); // 0 - 59
+            var s = date.getSeconds(); // 0 - 59
+            var session = "AM";
+
+            if (h == 0) {
+                h = 12;
+            }
+
+            if (h > 12) {
+                h = h - 12;
+                session = "PM";
+            }
+
+            if (h < 10) {
+                h = "0" + h;
+            } else {
+                h = h.toString();
+            }
+
+            if (m < 10) {
+                m = "0" + m;
+            } else {
+                m = m.toString();
+            }
+
+            if (s < 10) {
+                s = "0" + s;
+            } else {
+                s = s.toString();
+            }
+
+
+            var time = h + ":" + m + ":" + s + " " + session;
+            document.getElementById("MyClockDisplay").innerText = time;
+            document.getElementById("MyClockDisplay").textContent = time;
+
+            setTimeout(showTime, 1000);
+        }
+
+
+    </script>
+</body>
+
+</html>
